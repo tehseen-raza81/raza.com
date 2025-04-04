@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAZA - Login</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">RAZA</div>
+        <div class="nav-buttons">
+            <a href="index.html" class="btn-login">Home</a>
+        </div>
+    </nav>
+
+    <div class="login-container">
+        <div class="login-box">
+            <h1>Welcome Back</h1>
+            <form class="login-form" onsubmit="return handleLogin(event)">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" required>
+                </div>
+                <div class="form-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="admin-login">
+                        Login as Admin
+                    </label>
+                </div>
+                <button type="submit" class="login-btn">Sign In</button>
+                <div class="form-footer">
+                    <a href="#" class="forgot-password">Forgot Password?</a>
+                    <a href="#" class="create-account">Create Account</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>RAZA © 2024</p>
+            <div class="footer-links">
+                <a href="#">Privacy & Legal</a>
+                <a href="#">Contact</a>
+                <a href="#">News</a>
+                <a href="#">Careers</a>
+            </div>
+            <div class="social-links">
+                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-x-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function handleLogin(event) {
+            event.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const isAdmin = document.getElementById('admin-login').checked;
+
+            // For demo purposes, using simple credentials
+            // In a real application, this should be handled securely on the server
+            if (isAdmin && email === 'admin@raza.com' && password === 'admin123') {
+                window.location.href = 'admin.html';
+            } else if (!isAdmin && email && password) {
+                // Handle regular user login
+                window.location.href = 'index.html';
+            } else {
+                alert('Invalid credentials. For demo: Use admin@raza.com / admin123 for admin access');
+            }
+            return false;
+        }
+    </script>
+</body>
+</html> 

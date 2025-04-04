@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAZA - Admin Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body class="admin-body">
+    <nav class="admin-navbar">
+        <div class="logo">RAZA Admin</div>
+        <div class="admin-nav-buttons">
+            <a href="index.html" class="btn-home"><i class="fas fa-home"></i> Home</a>
+            <button class="btn-logout" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</button>
+        </div>
+    </nav>
+
+    <div class="admin-container">
+        <div class="admin-sidebar">
+            <div class="admin-profile">
+                <i class="fas fa-user-circle"></i>
+                <span>Admin User</span>
+            </div>
+            <ul class="admin-menu">
+                <li class="active"><a href="#dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                <li><a href="#orders"><i class="fas fa-shopping-cart"></i> Orders</a></li>
+                <li><a href="#inventory"><i class="fas fa-car"></i> Inventory</a></li>
+                <li><a href="#test-drives"><i class="fas fa-calendar-alt"></i> Test Drives</a></li>
+                <li><a href="#users"><i class="fas fa-users"></i> Users</a></li>
+                <li><a href="#settings"><i class="fas fa-cog"></i> Settings</a></li>
+            </ul>
+        </div>
+
+        <main class="admin-main">
+            <div class="admin-header">
+                <h1>Dashboard</h1>
+                <div class="admin-actions">
+                    <button class="btn-primary"><i class="fas fa-plus"></i> New Order</button>
+                    <button class="btn-secondary"><i class="fas fa-download"></i> Export</button>
+                </div>
+            </div>
+
+            <div class="admin-stats">
+                <div class="stat-card animate__animated animate__fadeInUp" style="animation-delay: 0.1s;">
+                    <i class="fas fa-shopping-cart"></i>
+                    <div class="stat-info">
+                        <h3>Total Orders</h3>
+                        <p>1,234</p>
+                        <div class="stat-trend positive">
+                            <i class="fas fa-arrow-up"></i> 12.5%
+                        </div>
+                    </div>
+                </div>
+                <div class="stat-card animate__animated animate__fadeInUp" style="animation-delay: 0.2s;">
+                    <i class="fas fa-car"></i>
+                    <div class="stat-info">
+                        <h3>Vehicles in Stock</h3>
+                        <p>56</p>
+                        <div class="stat-trend negative">
+                            <i class="fas fa-arrow-down"></i> 3.2%
+                        </div>
+                    </div>
+                </div>
+                <div class="stat-card animate__animated animate__fadeInUp" style="animation-delay: 0.3s;">
+                    <i class="fas fa-calendar-check"></i>
+                    <div class="stat-info">
+                        <h3>Test Drives</h3>
+                        <p>89</p>
+                        <div class="stat-trend positive">
+                            <i class="fas fa-arrow-up"></i> 8.7%
+                        </div>
+                    </div>
+                </div>
+                <div class="stat-card animate__animated animate__fadeInUp" style="animation-delay: 0.4s;">
+                    <i class="fas fa-users"></i>
+                    <div class="stat-info">
+                        <h3>Total Users</h3>
+                        <p>5,678</p>
+                        <div class="stat-trend positive">
+                            <i class="fas fa-arrow-up"></i> 15.3%
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="admin-content">
+                <div class="content-card animate__animated animate__fadeInUp" style="animation-delay: 0.5s;">
+                    <h2>Recent Orders</h2>
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Customer</th>
+                                <th>Vehicle</th>
+                                <th>Status</th>
+                                <th>Date</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#12345</td>
+                                <td>John Doe</td>
+                                <td>Model S</td>
+                                <td><span class="status pending">Pending</span></td>
+                                <td>2024-03-15</td>
+                                <td>
+                                    <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                                    <button class="btn-icon"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>#12346</td>
+                                <td>Jane Smith</td>
+                                <td>Model 3</td>
+                                <td><span class="status completed">Completed</span></td>
+                                <td>2024-03-14</td>
+                                <td>
+                                    <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                                    <button class="btn-icon"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>#12347</td>
+                                <td>Robert Johnson</td>
+                                <td>Model X</td>
+                                <td><span class="status pending">Pending</span></td>
+                                <td>2024-03-13</td>
+                                <td>
+                                    <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                                    <button class="btn-icon"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>#12348</td>
+                                <td>Emily Davis</td>
+                                <td>Model Y</td>
+                                <td><span class="status completed">Completed</span></td>
+                                <td>2024-03-12</td>
+                                <td>
+                                    <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                                    <button class="btn-icon"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        function logout() {
+            // Add logout logic here
+            window.location.href = 'login.html';
+        }
+
+        // Add animation to menu items on hover
+        document.querySelectorAll('.admin-menu li').forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.classList.add('animate__animated', 'animate__pulse');
+            });
+            
+            item.addEventListener('animationend', function() {
+                this.classList.remove('animate__animated', 'animate__pulse');
+            });
+        });
+
+        // Add animation to stat cards on hover
+        document.querySelectorAll('.stat-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.classList.add('animate__animated', 'animate__pulse');
+            });
+            
+            card.addEventListener('animationend', function() {
+                this.classList.remove('animate__animated', 'animate__pulse');
+            });
+        });
+    </script>
+</body>
+</html> 

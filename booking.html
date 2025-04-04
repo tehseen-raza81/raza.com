@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAZA - Book a Test Drive</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="booking.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">RAZA</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="#models">Models</a>
+            <a href="#solar">Solar</a>
+            <a href="#powerwall">Powerwall</a>
+            <a href="#charging">Charging</a>
+        </div>
+        <div class="nav-buttons">
+            <a href="login.html" class="btn-login">Login</a>
+            <a href="#" class="btn-menu"><i class="fas fa-bars"></i></a>
+        </div>
+    </nav>
+
+    <div class="booking-container">
+        <div class="booking-header">
+            <h1>Book Your Experience</h1>
+            <p>Schedule a test drive or place an order for your new RAZA vehicle</p>
+        </div>
+
+        <div class="booking-options">
+            <div class="booking-card" id="test-drive">
+                <div class="card-icon">
+                    <i class="fas fa-car"></i>
+                </div>
+                <h2>Test Drive</h2>
+                <p>Experience the future of driving with a test drive of your chosen RAZA model.</p>
+                <button class="btn-booking" onclick="showBookingForm('test-drive')">Book Test Drive</button>
+            </div>
+
+            <div class="booking-card" id="order">
+                <div class="card-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                </div>
+                <h2>Place Order</h2>
+                <p>Order your new RAZA vehicle online with our streamlined ordering process.</p>
+                <button class="btn-booking" onclick="showBookingForm('order')">Place Order</button>
+            </div>
+
+            <div class="booking-card" id="service">
+                <div class="card-icon">
+                    <i class="fas fa-tools"></i>
+                </div>
+                <h2>Service Appointment</h2>
+                <p>Schedule maintenance or service for your RAZA vehicle.</p>
+                <button class="btn-booking" onclick="showBookingForm('service')">Book Service</button>
+            </div>
+        </div>
+
+        <div class="booking-form-container" id="booking-form">
+            <div class="booking-form">
+                <h2 id="form-title">Book a Test Drive</h2>
+                <form id="vehicle-booking-form">
+                    <div class="form-group">
+                        <label for="model">Select Model</label>
+                        <select id="model" required>
+                            <option value="">Choose a model</option>
+                            <option value="model-s">Model S</option>
+                            <option value="model-3">Model 3</option>
+                            <option value="model-x">Model X</option>
+                            <option value="model-y">Model Y</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="date">Preferred Date</label>
+                        <input type="date" id="date" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="time">Preferred Time</label>
+                        <select id="time" required>
+                            <option value="">Select time</option>
+                            <option value="09:00">9:00 AM</option>
+                            <option value="10:00">10:00 AM</option>
+                            <option value="11:00">11:00 AM</option>
+                            <option value="12:00">12:00 PM</option>
+                            <option value="13:00">1:00 PM</option>
+                            <option value="14:00">2:00 PM</option>
+                            <option value="15:00">3:00 PM</option>
+                            <option value="16:00">4:00 PM</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="location">Preferred Location</label>
+                        <select id="location" required>
+                            <option value="">Select location</option>
+                            <option value="new-york">New York</option>
+                            <option value="los-angeles">Los Angeles</option>
+                            <option value="chicago">Chicago</option>
+                            <option value="houston">Houston</option>
+                            <option value="miami">Miami</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="notes">Additional Notes</label>
+                        <textarea id="notes" rows="3"></textarea>
+                    </div>
+
+                    <div class="form-buttons">
+                        <button type="submit" class="btn-submit">Submit Booking</button>
+                        <button type="button" class="btn-cancel" onclick="hideBookingForm()">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>RAZA © 2024</p>
+            <div class="footer-links">
+                <a href="#">Privacy & Legal</a>
+                <a href="#">Contact</a>
+                <a href="#">News</a>
+                <a href="#">Careers</a>
+            </div>
+            <div class="social-links">
+                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-x-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function showBookingForm(type) {
+            const formContainer = document.getElementById('booking-form');
+            const formTitle = document.getElementById('form-title');
+            
+            if (type === 'test-drive') {
+                formTitle.textContent = 'Book a Test Drive';
+            } else if (type === 'order') {
+                formTitle.textContent = 'Place an Order';
+            } else if (type === 'service') {
+                formTitle.textContent = 'Book a Service Appointment';
+            }
+            
+            formContainer.classList.add('active');
+        }
+        
+        function hideBookingForm() {
+            const formContainer = document.getElementById('booking-form');
+            formContainer.classList.remove('active');
+        }
+    </script>
+</body>
+</html> 

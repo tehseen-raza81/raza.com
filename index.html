@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAZA - Electric Vehicles</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">RAZA</div>
+        <div class="nav-links">
+            <a href="#models">Models</a>
+            <a href="#solar">Solar</a>
+            <a href="#powerwall">Powerwall</a>
+            <a href="#charging">Charging</a>
+            <a href="#learn-more">Learn More</a>
+        </div>
+        <div class="nav-buttons">
+            <a href="login.html" class="btn-login">Login</a>
+            <a href="booking.html" class="btn-booking-nav">Book Now</a>
+            <a href="#" class="btn-menu" onclick="toggleMenu()"><i class="fas fa-bars"></i></a>
+        </div>
+    </nav>
+
+    <div class="menu-overlay" id="menu-overlay">
+        <div class="menu-content">
+            <div class="menu-header">
+                <h2>Menu</h2>
+                <button class="close-menu" onclick="toggleMenu()"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="menu-sections">
+                <div class="menu-section">
+                    <h3>Vehicle</h3>
+                    <ul>
+                        <li><a href="#model-s">Model S</a></li>
+                        <li><a href="#model-3">Model 3</a></li>
+                        <li><a href="#model-x">Model X</a></li>
+                        <li><a href="#model-y">Model Y</a></li>
+                    </ul>
+                </div>
+                <div class="menu-section">
+                    <h3>Energy</h3>
+                    <ul>
+                        <li><a href="#solar">Solar Panels</a></li>
+                        <li><a href="#powerwall">Powerwall</a></li>
+                        <li><a href="#charging">Charging</a></li>
+                    </ul>
+                </div>
+                <div class="menu-section">
+                    <h3>Account</h3>
+                    <ul>
+                        <li><a href="login.html">Sign In</a></li>
+                        <li><a href="#">Create Account</a></li>
+                        <li><a href="#">My Account</a></li>
+                    </ul>
+                </div>
+                <div class="menu-section">
+                    <h3>Shop</h3>
+                    <ul>
+                        <li><a href="#">Apparel</a></li>
+                        <li><a href="#">Accessories</a></li>
+                        <li><a href="#">Charging</a></li>
+                    </ul>
+                </div>
+                <div class="menu-section">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Service</a></li>
+                        <li><a href="#">Locations</a></li>
+                    </ul>
+                </div>
+                <div class="menu-section">
+                    <h3>India</h3>
+                    <ul>
+                        <li><a href="#">About India</a></li>
+                        <li><a href="#">Locations</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <section class="hero" id="model-s">
+            <div class="hero-content">
+                <h1>Model S</h1>
+                <p>Order Online for <span class="underline">Touchless Delivery</span></p>
+                <div class="cta-buttons">
+                    <button class="btn-primary">Custom Order</button>
+                    <button class="btn-secondary">Existing Inventory</button>
+                    <a href="booking.html" class="btn-booking">Book Test Drive</a>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </section>
+
+        <section class="hero" id="model-3">
+            <div class="hero-content">
+                <h1>Model 3</h1>
+                <p>Order Online for <span class="underline">Touchless Delivery</span></p>
+                <div class="cta-buttons">
+                    <button class="btn-primary">Custom Order</button>
+                    <button class="btn-secondary">Existing Inventory</button>
+                    <a href="booking.html" class="btn-booking">Book Test Drive</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="hero" id="model-x">
+            <div class="hero-content">
+                <h1>Model X</h1>
+                <p>Order Online for <span class="underline">Touchless Delivery</span></p>
+                <div class="cta-buttons">
+                    <button class="btn-primary">Custom Order</button>
+                    <button class="btn-secondary">Existing Inventory</button>
+                    <a href="booking.html" class="btn-booking">Book Test Drive</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="hero" id="model-y">
+            <div class="hero-content">
+                <h1>Model Y</h1>
+                <p>Order Online for <span class="underline">Touchless Delivery</span></p>
+                <div class="cta-buttons">
+                    <button class="btn-primary">Custom Order</button>
+                    <button class="btn-secondary">Existing Inventory</button>
+                    <a href="booking.html" class="btn-booking">Book Test Drive</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>RAZA © 2024</p>
+            <div class="footer-links">
+                <a href="#">Privacy & Legal</a>
+                <a href="#">Contact</a>
+                <a href="#">News</a>
+                <a href="#">Careers</a>
+            </div>
+            <div class="social-links">
+                <a href="https://www.instagram.com/the_tahseen_raza/" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/share/1HdX3TCno5/" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.linkedin.com/in/tehseen-raza-77307b2a2?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-x-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+    <script>
+        function toggleMenu() {
+            const menuOverlay = document.getElementById('menu-overlay');
+            menuOverlay.classList.toggle('active');
+            document.body }
+    </script>
+</body>
+</html> 
